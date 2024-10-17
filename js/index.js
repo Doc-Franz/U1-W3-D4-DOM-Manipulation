@@ -12,6 +12,8 @@ const createCells = () => {
 
     const cellNumber1 = document.createElement("h1");
     cellNumber1.innerText = i + 1;
+    cellNumber1.style.padding = "10px";
+    cellNumber1.style.margin = "0";
     totalNumbers.push(cellNumber);
 
     tombola.appendChild(cellNumber);
