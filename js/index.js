@@ -1,7 +1,6 @@
 // Generare le celle
 
 const numberOfCells = 76;
-const totalNumbers = [];
 
 const createCells = () => {
   const tombola = document.getElementById("tombola");
@@ -14,14 +13,13 @@ const createCells = () => {
     cellNumber1.innerText = i + 1;
     cellNumber1.style.padding = "10px";
     cellNumber1.style.margin = "0";
-    totalNumbers.push(cellNumber);
 
     tombola.appendChild(cellNumber);
     cellNumber.appendChild(cellNumber1);
   }
 };
 
-console.log(totalNumbers);
+// console.log(totalNumbers);
 
 // Generazione di un numero random
 
@@ -31,6 +29,9 @@ const alreadyExtractedNumbers = [];
 
 btn.onclick = function (e) {
   const numberSelected = Math.floor(Math.random() * numberOfCells);
+
+  const totalNumbers = document.querySelectorAll(".cell");
+  console.log(totalNumbers);
 
   const previousCell = totalNumbers[previousNumber];
   previousCell.style.color = "black";
@@ -45,5 +46,4 @@ btn.onclick = function (e) {
 
 window.onload = () => {
   createCells();
-  //   selectRandomNumber();
 };
